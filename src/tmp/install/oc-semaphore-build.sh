@@ -20,7 +20,7 @@ cd "${APP_HOME}/go/src/github.com/joernott"
 git clone --recursive https://github.com/joernott/semaphore.git
 cd semaphore
 # Workaround while my changes are not back in master
-git checkout feature/both_vaults
+git checkout develop
 FILES=$(find . -iname "*.go")
 for FILE in ${FILES}; do
     sed -i ${FILE} -e 's|github.com/ansible-semaphore/semaphore|github.com/joernott/semaphore|g'
