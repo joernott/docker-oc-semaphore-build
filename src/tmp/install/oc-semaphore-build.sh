@@ -3,8 +3,7 @@ set -e
 set -x
 
 function install_go() {
-    curl -jkLsS go.tar.gz https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz \
-         -o /tmp/go.tar.gz 
+    curl -jkLsS  -o /tmp/go.tar.gz https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz
     tar -C /usr/local -xzf /tmp/go.tar.gz
     echo 'export PATH=$PATH:/usr/local/go/bin' >>/etc/profile
     export PATH=$PATH:/usr/local/go/bin
