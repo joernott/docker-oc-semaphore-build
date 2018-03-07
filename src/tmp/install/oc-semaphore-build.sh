@@ -19,6 +19,13 @@ mkdir -p "${APP_HOME}/go/src/github.com/joernott" "${APP_HOME}/go/bin" "${APP_HO
 cd "${APP_HOME}/go/src/github.com/joernott"
 git clone --recursive https://github.com/joernott/semaphore.git
 cd semaphore
+# Workaround while my changes are not back in master
+git checkout feature/both_vaults
+FILES=$(find . -iname "*.go")
+for FILE in ${FILES}; do
+    sed -i ${FILE} -e 's|github.com/ansible-semaphore/semaphore|github.com/joernott/semaphore|g'
+done
+# End workaround
 go get ./... github.com/cespare/reflex github.com/jteeuwen/go-bindata/... github.com/mitchellh/gox
 chown -R ${APP_USER}:${APP_GROUP} "${APP_HOME}/go"
 npm install -g async
