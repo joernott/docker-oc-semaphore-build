@@ -26,7 +26,7 @@ for FILE in ${FILES}; do
     sed -i ${FILE} -e 's|github.com/ansible-semaphore/semaphore|github.com/joernott/semaphore|g'
 done
 # End workaround
-go get ./... github.com/cespare/reflex github.com/jteeuwen/go-bindata/... github.com/mitchellh/gox
+go get ./... github.com/cespare/reflex github.com/gobuffalo/packr/... github.com/mitchellh/gox
 chown -R ${APP_USER}:${APP_GROUP} "${APP_HOME}/go"
 npm install -g async
 npm install -g nodemon pug-cli less
