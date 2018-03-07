@@ -8,6 +8,7 @@ ENV APP_USER=semaphore \
     APP_HOME=/build \
     GIT_COMMIT="x" \
     GO_VERSION=1.10 \
+    GOPATH="/build/go" \
     OUTPUT_OWNER=white \
     OUTPUT_GROUP=users \
     SEMAPHORE_BRANCH=master \
