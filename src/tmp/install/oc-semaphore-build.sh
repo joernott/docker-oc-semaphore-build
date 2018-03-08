@@ -27,6 +27,13 @@ for FILE in ${FILES}; do
 done
 # End workaround
 go get ./... github.com/cespare/reflex github.com/gobuffalo/packr/... github.com/mitchellh/gox
+# Workaround while my changes are not back in master
+git checkout develop
+FILES=$(find . -iname "*.go")
+for FILE in ${FILES}; do
+    sed -i ${FILE} -e 's|github.com/joernott/semaphore|github.com/ansible-semaphore/semaphore|g'
+done
+# End workaround
 chown -R ${APP_USER}:${APP_GROUP} "${APP_HOME}/go"
 npm install -g async
 npm install -g nodemon pug-cli less
