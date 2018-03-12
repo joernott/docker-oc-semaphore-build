@@ -12,6 +12,7 @@ ENV APP_USER=semaphore \
     OUTPUT_OWNER=white \
     OUTPUT_GROUP=users \
     SEMAPHORE_BRANCH=master \
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/build/go/bin \
     IMAGE_HISTORY="x"
 
 COPY src /
