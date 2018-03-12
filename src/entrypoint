@@ -13,6 +13,6 @@ for FILE in ${FILES}; do
 done
 # End workaround
 gosu ${APP_USER}:${APP_GROUP} bash -c "cd '${APP_HOME}/go/src/github.com/joernott/semaphore' && ./make.sh"
-cp ${APP_HOME}/go/src/github.com/joernott/semaphore/cli/semaphore/linux_amd64 /output/semaphore
+cp ${APP_HOME}/go/src/github.com/joernott/semaphore/cli/semaphore_linux_amd64 /output/semaphore
 chmod a+rx /output/semaphore
 chown ${OUTPUT_OWNER}:${OUTPUT_GROUP} /output/semaphore
