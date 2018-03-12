@@ -35,7 +35,6 @@ for FILE in ${FILES}; do
 done
 # End workaround
 chown -R ${APP_USER}:${APP_GROUP} "${APP_HOME}/go"
-gosu ${APP_USER}:${APP_GROUP} bash -c "/usr/bin/npm install async"
 npm install -g nodemon pug-cli less
 mkdir /output
 touch /output/not_mounted

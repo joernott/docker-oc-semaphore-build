@@ -17,5 +17,8 @@ ENV APP_USER=semaphore \
 COPY src /
 
 RUN /tmp/install/oc-semaphore-build.sh
+USER semaphore
+RUN /usr/bin/npm install async
+
 
 ENTRYPOINT /entrypoint
