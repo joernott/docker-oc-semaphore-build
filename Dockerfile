@@ -18,6 +18,7 @@ COPY src /
 
 RUN /tmp/install/oc-semaphore-build.sh
 USER semaphore
+WORKDIR /build
 RUN /usr/bin/npm install async
 
 
